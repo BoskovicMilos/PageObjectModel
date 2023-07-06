@@ -95,6 +95,17 @@ public class IntentoryTest extends BaseTest
         Assert.assertEquals(checkoutStepOnePage.getError(),"Error: First Name is required");
 
     }
+    @Test
+    public void RemoveProductFromCart()
+    {
+        inventoryPage.clickLight();
+        inventoryPage.clickBackpack();
+        inventoryPage.clickCart();
+        inventoryPage.removeBackpack();
+
+        Assert.assertEquals(inventoryPage.getCartNumber(),"1");
+
+    }
 
     @AfterMethod
     public void after()
